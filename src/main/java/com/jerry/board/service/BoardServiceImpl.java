@@ -8,13 +8,15 @@ import org.springframework.stereotype.Service;
 import com.jerry.board.dao.BoardDAO;
 import com.jerry.board.vo.BoardVO;
 
-@Service("boardService")
+@Service
 public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	BoardDAO boardDao;
 	
+	@Override
 	public List<BoardVO> selectList() {
+		System.out.println("BoardServiceImpl.selectList");
 		List<BoardVO> list = boardDao.selectAll();
 		return list;
 	}

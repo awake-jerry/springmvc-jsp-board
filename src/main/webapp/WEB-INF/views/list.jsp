@@ -28,7 +28,7 @@
 				<c:forEach var="board" items="${list}">
 					<tr>
 						<td>${board.wr_uid}</td>
-						<td><a href="view.do?wr_uid=${board.wr_uid}">${board.subject}</a></td>
+						<td><a href="/board/view?wr_uid=${board.wr_uid}">${board.subject}</a></td>
 						<td>${board.name}</td>
 						<td>${board.viewcnt}</td>
 						<td>${board.regdate}</td>
@@ -36,7 +36,7 @@
 
 				<tr>
 					<td colspan="5" class="text-center">
-						<button onclick="location.href='write.do'">신규등록</button>
+						<button onclick="location.href='/board/write'">신규등록</button>
 					</td>
 				</tr>
 			</tbody>

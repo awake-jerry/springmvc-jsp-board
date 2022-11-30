@@ -23,35 +23,4 @@
 	
 	<context:component-scan base-package="com.jerry.board" />
 	
-	<!-- jerryJo - DataSource Setting -->
-<!-- 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<beans:property name="driverClassName" value="${jdbc.driverClassName}" />
-		<beans:property name="url" value="${jdbc.url}" />
-		<beans:property name="username" value="${jdbc.username}" />
-		<beans:property name="password" value="${jdbc.password}" />
-	</beans:bean> -->
-	
-	<!-- jerryJo - MyBatis Setting -->
-	<!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="configLocation" value="classpath:config/SqlMapConfig.xml" />
-		<beans:property name="mapperLocations">
-			<beans:list>
-				<beans:value>
-					classpath:config/Board.xml
-				</beans:value>
-			</beans:list>
-		</beans:property>
-	</beans:bean> -->
-	
-	<!-- <beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg ref="sqlSessionFactory"/>
-	</beans:bean> -->
-	
-	<!-- jerryJo - Mapper Interface Setting -->
-	<!-- <beans:bean id="boardMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<beans:property name="mapperInterface" value="com.jerry.board.dao.BoardMapper"/>
-		<beans:property name="sqlSessionTemplate" ref="sqlSession"/>
-	</beans:bean> -->
-	
 </beans:beans>

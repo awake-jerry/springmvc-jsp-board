@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jerry.board.dao.BoardMapper">
+	<select id="selectAll" resultType="Board">
+		SELECT * FROM BOARD ORDER BY WR_UID DESC
+	</select>
+	
+	<select id="selectOne" parameterType="Board" resultType="Board">
+		SELECT * FROM BOARD WHERE WR_UID = #{wr_uid}
+	</select>
+	
+	<insert id="insertOne" parameterType="Board">
+		INSERT INTO BOARD (WR_UID, SUBJECT, CONTENT, NAME) VALUES (board_seq.nextval, #{subject}, #{content}, #{name})
+	</insert>
+	
+	<update id="updateOne" parameterType="Board">
+		UPDATE BOARD SET SUBJECT = #{subject}, content = ${content}
+		WHERE WR_UID = #{wr_uid}
+	</update>
+	
+	<update id="updateOne" parameterType="Board">
+		UPDATE BOARD SET VIEWCNT = VIEWCNT+1
+		WHERE WR_UID = #{wr_uid}
+	</update>
+	
+	<delete id="deleteOne" parameterType="Board">
+		DELETE FROM BOARD
+		WHERE WR_UID = ${wr_uid}
+	</delete>
+</mapper>
