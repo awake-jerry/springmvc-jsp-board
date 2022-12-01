@@ -24,11 +24,12 @@
 				</tr>
 			</thead>
 
-			<tbody>
+			<tbody class="boardBody">
 				<c:forEach var="board" items="${list}">
 					<tr>
 						<td>${board.wr_uid}</td>
-						<td><a href="/board/view?wr_uid=${board.wr_uid}">${board.subject}</a></td>
+						<%-- <td><a href="javascript:fn_viewCount((${board.wr_uid}) => location.href = '/board/view?wr_uid=${board.wr_uid}');">${board.subject}</a></td> --%>
+						<td><a href="javascript:fn_viewCount(${board.wr_uid})">${board.subject}</a></td>
 						<td>${board.name}</td>
 						<td>${board.viewcnt}</td>
 						<td>${board.regdate}</td>
@@ -42,5 +43,30 @@
 			</tbody>
 		</table>
 	</div>
+<script>
+	const fn_viewCount = (wr_uid) => {
+		fn_viewCountReq(wr_uid);
+	}
+	
+	fn_viewCountReq = (wr_uid) => {
+		fetch('/board/viewCount', {
+			method : 'post',
+			headers : {
+				'Content-Type' : 'application/json'
+			},
+			body : JSON.stringify({
+				'wr_uid': wr_uid
+			})
+		})
+		.then(response => response.json())
+		.then((data) => {
+			if(data == 1) {
+				
+			}
+		}
+		.catch(err => console.log('err ::: ' + err));
+	}
+
+</script>
 </body>
 </html>

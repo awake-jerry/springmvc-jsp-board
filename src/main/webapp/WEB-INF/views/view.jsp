@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.js"></script>
 <script>
-chkDelete = (wr_uid) => {
-	let r = confirm("삭제?");
+fn_Delete = (wr_uid) => {
+	let confirmMessage = confirm("삭제하시겠습니까?");
 	
-	if(r) {
+	if(confirmMessage) {
 		location.href = 'deleteOk.do/${board.wr_uid}';
 	}
 }
@@ -47,11 +47,13 @@ chkDelete = (wr_uid) => {
 				<td colspan="2">${board.content}</td>
 			</tr>
 
-			<tr colspan="2" class="text-center">
-				<button onclick="location.href ='/board/update?wr_uid=${board.wr_uid}'">수정하기</button>
-				<button onclick="location.href ='/board/list'">목록보기</button>
-				<button onclick="chkDelete(${board.wr_uid})">삭제하기</button>
-				<button onclick="location.href ='/board/write'">신규등록</button>
+			<tr>
+				<td colspan="2" class="text-center">
+					<button onclick="location.href ='/board/update?wr_uid=${board.wr_uid}'">수정하기</button>
+					<button onclick="location.href ='/board/list'">목록보기</button>
+					<button onclick="fn_Delete(${board.wr_uid})">삭제하기</button>
+					<button onclick="location.href ='/board/write'">신규등록</button>
+				</td>
 			</tr>
 		</table>
 		</div>

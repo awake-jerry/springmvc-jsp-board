@@ -18,8 +18,8 @@ public class BoardDAO {
 		return boardMapper.selectAll();
 	}
 
-	public BoardVO select(BoardVO boardVO) {
-		return boardMapper.selectOne(boardVO);
+	public BoardVO select(int wr_uid) {
+		return boardMapper.selectOne(wr_uid);
 	}
 
 	public void insert(BoardVO boardVO) {
@@ -30,8 +30,8 @@ public class BoardDAO {
 		boardMapper.updateOne(boardVO);
 	}
 
-	public void updateCount(BoardVO boardVO) {
-		boardMapper.updateViewcnt(boardVO);
+	public int updateCount(BoardVO boardVO) {
+		return boardMapper.updateViewcnt(boardVO);
 	}
 
 	public void delete(BoardVO boardVO) {

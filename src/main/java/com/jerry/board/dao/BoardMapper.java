@@ -8,7 +8,7 @@ public interface BoardMapper {
 	
 	List<BoardVO> selectAll();
 	
-	BoardVO selectOne(BoardVO boardVO);
+	BoardVO selectOne(int wr_uid);
 	
 	void insertOne(BoardVO boardVO);
 	
@@ -16,5 +16,5 @@ public interface BoardMapper {
 	
 	void deleteOne(BoardVO boardVO);
 	
-	void updateViewcnt(BoardVO boardVO);
+	int updateViewcnt(BoardVO boardVO);
 }

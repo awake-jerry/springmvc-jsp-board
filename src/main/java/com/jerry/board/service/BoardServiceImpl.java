@@ -22,8 +22,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardVO selectOne(BoardVO boardVO) {
-		return boardDao.select(boardVO);
+	public BoardVO selectOne(int wr_uid) {
+		return boardDao.select(wr_uid);
 	}
 
 	@Override
@@ -37,8 +37,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void updateViewcnt(BoardVO boardVO) {
-		boardDao.updateCount(boardVO);
+	public int updateViewcnt(BoardVO boardVO) {
+		return boardDao.updateCount(boardVO);
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package com.jerry.board.vo;
 
 import org.apache.ibatis.type.Alias;
 
+import lombok.Data;
 
 /**
  * 
@@ -16,6 +17,22 @@ public class BoardVO {
 	private String name;
 	private int viewcnt;
 	private String regdate;
+	
+	public BoardVO() {
+		super();
+	}
+	
+	public BoardVO(int wr_uid, String subject, String content, String name, int viewcnt, String regdate) {
+		super();
+		this.wr_uid = wr_uid;
+		this.subject = subject;
+		this.content = content;
+		this.name = name;
+		this.viewcnt = viewcnt;
+		this.regdate = regdate;
+	}
+	
+	
 	public int getWr_uid() {
 		return wr_uid;
 	}
@@ -52,5 +69,5 @@ public class BoardVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-
+	
 }

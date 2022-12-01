@@ -6,7 +6,7 @@
 		SELECT * FROM BOARD ORDER BY WR_UID DESC
 	</select>
 	
-	<select id="selectOne" parameterType="Board" resultType="Board">
+	<select id="selectOne" parameterType="Integer" resultType="Board">
 		SELECT * FROM BOARD WHERE WR_UID = #{wr_uid}
 	</select>
 	
