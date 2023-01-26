@@ -15,25 +15,25 @@ import lombok.Setter;
 
 public class DataSourceTest {
 	
-//	@Setter(onMethod_ = {@Autowired})
-	private DataSource dataSource;
+// //	@Setter(onMethod_ = {@Autowired})
+// 	private DataSource dataSource;
 	
-//	@Setter(onMethod_ = {@Autowired})
-	private SqlSessionFactory sqlSessionFactory;
+// //	@Setter(onMethod_ = {@Autowired})
+// 	private SqlSessionFactory sqlSessionFactory;
 	
-	@Test
-	public void testMyBatis() {
-		SqlSession session = sqlSessionFactory.openSession();
-		try {
-			Connection con = dataSource.getConnection();
+// 	@Test
+// 	public void testMyBatis() {
+// 		SqlSession session = sqlSessionFactory.openSession();
+// 		try {
+// 			Connection con = dataSource.getConnection();
 			
-			System.out.println("session" + session);
-			System.out.println("con" + con);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-			e.printStackTrace();
-		}
+// 			System.out.println("session" + session);
+// 			System.out.println("con" + con);
+// 		} catch (SQLException e) {
+// 			// TODO Auto-generated catch block
+// 			System.out.println(e);
+// 			e.printStackTrace();
+// 		}
 		
-	}
+// 	}
 }
